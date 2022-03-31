@@ -49,7 +49,7 @@ jobs:
           sourceanalyzer -b github-java-build -clean
           sourceanalyzer -b github-java-build -source 1.8 -cp "./**/*.jar" "./**/*.java" "./**/*.js" "./**/*.jsp" "./**/*.html" "./**/*.properties" "./**/*.xml"
           sourceanalyzer -b github-java-build -scan -f github-sast-report.fpr
-          fortifyclient -url https://fortify.cyberxdemo.com:8443/ssc -authtoken 46e34001-78d6-4cea-aa06-acd14b5e47a8 -application "simplistic.rabbitMQ" -applicationVersion "12.0" uploadFPR -file github-sast-report.fpr
+          fortifyclient -url https://fortify.cyberxdemo.com:8443/ssc -authtoken 516147e5-15ee-4f01-a97a-00ab0b0a589d -application "simplisticrabbitmq11" -applicationVersion "11.0" uploadFPR -file github-sast-report.fpr
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
@@ -63,7 +63,7 @@ jobs:
       #uses: docker://fortifydocker/fortify-vulnerability-exporter:latest
       #with:
       #  export_config: /config/SSCToGitHub.yml
-      #  ssc_baseUrl: http://<Public_IP>:8180/ssc
+      #  ssc_baseUrl: http://18.232.72.30:8180/ssc
       #  ssc_authToken: 5700ab1e-0af3-46d0-8289-e539540c3439
       #  ssc_version_name: simplisticrabbitmq:11.0
       #  # Or use ssc_version_id: 1234
